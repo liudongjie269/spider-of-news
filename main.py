@@ -11,4 +11,5 @@ if __name__ == '__main__':
     app=QtWidgets.QApplication(sys.argv)
     Win1=my_main_ui()
     Win1.show()
+	11
     app.exec_()
