@@ -3,17 +3,24 @@ class M_tray(QtWidgets.QSystemTrayIcon):
     def __init__(self,aa):
         super(M_tray, self).__init__(aa)
         self.setIcon(QtGui.QIcon("res/Tray.ico"))
-        self.activated.connect(self.cc)
-        self.showmenu()
+        #托盘被点击icocliced
+        self.activated.connect(self.icoclicked)
         self.icon = self.MessageIcon()
+        self.showmenu()
     def showmenu(self):
+        pw=self.parent()
         self.mainmenu=QtWidgets.QMenu()
-        self.showAction = QtWidgets.QAction("显示消息1", self, triggered=self.showM)
-        self.quitAction = QtWidgets.QAction("退出", self, triggered=self.showM)
-        self.mainmenu.addAction(self.showAction)
+        self.mainAction = QtWidgets.QAction("显示主界面", self, triggered=pw.show)
+        self.settinAction = QtWidgets.QAction("设置", self, triggered=pw.aa.show)
+        self.quitAction = QtWidgets.QAction("退出", self, triggered=pw.show)
+        self.mainmenu.addAction(self.mainAction)
+        self.mainmenu.addAction(self.settinAction)
         self.mainmenu.addAction(self.quitAction)
         self.setContextMenu(self.mainmenu)
-    def showM(self):
-        self.showMessage("测试", "我是消息", self.icon)
-    def cc(self,reason):
-        print(reason)
+    def icoclicked(self,reason):
+        pw=self.parent()
+        if reason==2:
+            if pw.isVisible():
+                pw.hide()
+            else:
+                pw.show()

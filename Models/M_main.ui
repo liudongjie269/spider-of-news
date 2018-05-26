@@ -6,34 +6,36 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>327</width>
-    <height>283</height>
+    <width>521</width>
+    <height>378</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
+  <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>9</y>
-     <width>301</width>
-     <height>251</height>
+     <x>20</x>
+     <y>150</y>
+     <width>481</width>
+     <height>201</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>确定</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-   </layout>
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>50</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>setting</string>
+   </property>
   </widget>
  </widget>
  <resources/>
